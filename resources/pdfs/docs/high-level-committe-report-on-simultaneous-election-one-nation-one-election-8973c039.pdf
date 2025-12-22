@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="format-detection" content="telephone=no" />
+<link rel="apple-touch-icon" href="https://onoe.gov.in/assets/images/favicon/apple-touch-icon.png">
+<link rel="icon" href="https://onoe.gov.in/assets/images/favicon/favicon.png">
+<meta name="keywords" content=" Onoe/one nation one election">
+<meta name="description" content="onoe/one nation one election">
+<meta name="author" content="National Informatics Center">
+<title>Home | One Nation one Election</title>
+<!-- Custom styles for this template -->
+<link href="https://onoe.gov.in/assets/css/base.css" rel="stylesheet" media="all">
+<link href="assets/css/base-responsive.css" rel="stylesheet" media="all">
+<link href="https://onoe.gov.in/assets/css/grid.css" rel="stylesheet" media="all">
+<link href="https://onoe.gov.in/assets/css/font.css" rel="stylesheet" media="all">
+<link href="https://onoe.gov.in/assets/css/font-awesome.min.css" rel="stylesheet" media="all">
+<link href="https://onoe.gov.in/assets/css/flexslider.css" rel="stylesheet" media="all">
+<link href="https://onoe.gov.in/assets/css/print.css" rel="stylesheet" media="print" />
+<!-- Theme styles for this template -->
+<link href="https://onoe.gov.in/assets/css/megamenu.css" rel="stylesheet" media="all" />
+<link href="https://onoe.gov.in/theme/css/site.css" rel="stylesheet" media="all">
+<link href="https://onoe.gov.in/theme/css/site-responsive.css" rel="stylesheet" media="all">
+<link href="https://onoe.gov.in/theme/css/ma5gallery.css" rel="stylesheet" type="text/css">
+<link href="https://onoe.gov.in/theme/css/print.css" rel="stylesheet" type="text/css" media="print">
+<link href="https://onoe.gov.in/assets/css/custom.css" rel="stylesheet" type="text/css" media="print">
+<style> .image-video {}</style>
+<noscript><link href="https://onoe.gov.in/theme/css/no-js.css" type="text/css" rel="stylesheet"></noscript>
+</head>
+<body>
+<div id="fb-root"></div>
+<header>
+    <div class="region region-header-top">
+    <div id="block-cmf-content-header-region-block" class="block block-cmf-content first last odd">
+      <div class="wrapper common-wrapper">
+        <div class="container common-container four_content ">
+          <div class="common-left clearfix">
+              <ul>
+                <li class="ministry"><a title="Ministry / Department Name" href="https://onoe.gov.in/index" target="_blank">
+		<span title="मंत्रालय / विभाग नाम">भारत सरकार </span>Government of India</a></li>
+              </ul>
+            </div>
+        	<div class="common-right clearfix">
+          		<ul id="header-nav">
+              <li class="ico-site-search cf"><a href="javascript:void(0);" id="toggleSearch" title="Site Search">
+    			<img class="top" src="assets/images/ico-site-search.png" alt="Site Search" /></a>
+    		 	<div class="search-drop both-search">
+        			 <div class="google-find">				
+        				<form method="get" action="" target="_blank"> 
+        				    <label for="search_key_g" class="notdisplay">Search</label>
+        					<input type="text" name="q" value="" id="search_key_g"/> 
+        					<input type="submit" value="Search" class="submit" /> 
+        					<div class="">
+        					<input type="radio" name="sitesearch" value="" id="the_web"/> 
+        					<label for="the_web">The Web</label> 
+                  			<input type="radio" name="sitesearch" value="india.gov.in" checked id="the_domain"/> <label for="the_domain"> INDIA.GOV.IN</label></div>
+        				</form>
+        			</div>
+        			<div class="find">
+            			<form name="searchForm" action="home.html">
+            				<label for="search_key" class="notdisplay">Search</label>
+            				<input type="text" name="search_key" id="search_key" onKeyUp="autoComplete()" autocomplete="off" required />
+            				<input type="submit" value="Search" class="bttn-search"/>
+            			</form>
+            			<div id="auto_suggesion"></div>
+            		</div>
+    			</div>
+    			</li><li class="ico-accessibility cf"><a href="javascript:void(0);" id="toggleAccessibility" title="Accessibility Dropdown">
+    				<img class="top" src="assets/images/ico-accessibility.png" alt="Accessibility Dropdown" />
+    				</a>
+                    <ul>
+                        <li> <a onClick="set_font_size('increase')" title="Increase font size" href="javascript:void(0);">A<sup>+</sup></a> </li>
+                        <li> <a onClick="set_font_size()" title="Reset font size" href="javascript:void(0);">A<sup>&nbsp;</sup></a> </li>
+                        <li> <a onClick="set_font_size('decrease')" title="Decrease font size" href="javascript:void(0);">A<sup>-</sup></a> </li>
+                        <li> <a href="javascript:void(0);" class="high-contrast dark" title="High Contrast">A</a> </li>
+                        <li> <a href="javascript:void(0);" class="high-contrast light" title="Normal Contrast" style="display: none;">A</a> </li>
+                       
+                    </ul>
+                    </li>
+                    <li class="ico-sitemap cf"><a href="#" title="Sitemap"> <img class="top" src="https://onoe.gov.in/assets/images/ico-sitemap.png" alt="Sitemap" /></a></li>
+                    <li class="hindi "><span class="de-lag">Language</span>
+                        <label class="de-lag">
+                          <span >Language</span>
+                          <select title="Select Language">
+                            <option>English</option>
+                            <option>हिन्दी</option>
+                          </select>
+                        </label>
+                    </li>
+                    <li class="hindi"><a href="javascript:;" title="Select Language">Language</a> 
+                      	<ul>
+                          	<li><a  href="javascript:void(0)" lang="hi" class="alink" title="Click here for हिन्दी version." onclick="changelang('hi');">हिन्दी</a></li>
+                          	<li><a  href="javascript:void(0)" lang="en" class="alink" title="Click here for English version." onclick="changelang('en');">English</a></li>
+                      	</ul>
+                    </li>
+                </ul>
+            	</div>
+       		 </div>
+    	</div>
+	</div>
+  </div>
+<!--Top-Header Section end-->
+  <section class="wrapper header-wrapper">
+      <div class="container header-container">
+      <h1 class="logo">
+          <a href="https://onoe.gov.in/index" title="Home" rel="home" class="header__logo" id="logo">
+             <img class="national_emblem" src="assets/images/emblem-dark.png" alt="National Emblem Logo">
+             <strong style="font-size: 107%;">एक देश एक चुनाव</strong>
+            <span>One Nation one Election</span>
+          </a>
+        </h1>
+        <div class="header-right clearfix">
+            <div class="right-content clearfix">
+                <div class="float-element">
+                   <!----<a class="sw-logo" target="_blank" href="https://swachhbharat.mygov.in/" title="Swachh Bharat, External link that open in a new windows">-->
+                   <img src="assets/images/swach-bharat.png" alt="Swachh Bharat" class="swach-bharat"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+<!--/.header-wrapper-->
+<div class="wrapper megamenu-wraper">
+  <div class="container"> <a class="showhide" href="javascript:void(0)"><em></em><em></em><em></em></a>
+    <nav class="main-menu clearfix" id="main_menu">
+      <ul class="nav-menu">
+        <li> <a href="https://onoe.gov.in/index" class="home"><i class="fa fa-home"></i></a> </li>
+        <li> <a href="inner.html">हमारे बारे में</a>
+          <div class="sub-nav col-1">
+            <ul class="sub-nav-group">
+            		<li><a href="https://onoe.gov.in/onoe-tor">निबंधन और निर्देश </a></li> 
+             	<li><a href="https://onoe.gov.in/whoswho">उच्च स्तरीय समिति [ एच एल सी  ]    </a></li> 
+              	<li><a href="https://onoe.gov.in/onoe-secretariat"> ओएनओई सचिवालय   </a></li> 	 
+            </ul>
+          </div>
+        </li>
+        
+        <li><a href="inner.html"> अधिनियम एवं नियम    </a>
+          <div class="sub-nav col-1">
+            <ul class="sub-nav-group">
+               <li><a href="https://onoe.gov.in/onoe-constitution">  भारत का संविधान  </a></li> 
+               <li><a href="https://onoe.gov.in/onoe-act">अधिनियम </a></li> 
+               <li><a href="https://onoe.gov.in/onoe-rules">नियम  </a></li>   
+               <li><a href="https://onoe.gov.in/onoe-order">आदेश </a></li>  
+               <li> <a href="https://onoe.gov.in/onoe-gazette-notification">अधिसूचना </a> </li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="https://onoe.gov.in/onoe-reports">प्रतिवेदन  </a></li>	
+        
+ 
+        <li><a href="inner.html">प्रेस   </a>
+          <div class="sub-nav col-1">
+            <ul class="sub-nav-group">
+              <li><a href="https://onoe.gov.in/onoe-pressrelease">प्रेस विज्ञप्ति  </a></li>
+              <li><a href="https://onoe.gov.in/onoe-news">समाचार   </a></li>
+              <li><a href="https://onoe.gov.in/onoe-gallery">फोटो गैलरी   </a></li>
+            </ul>
+          </div>
+        </li>
+        <li> <a href="https://onoe.gov.in/onoe-important">महत्वपूर्ण लिंक  </a> </li>
+         
+       <!-- -<li><a href="inner.html">Documents </a>
+          <div class="sub-nav">
+            <ul class="sub-nav-group">
+              <li><a href="https://onoe.gov.in/onoe-reports">Reports</a></li>
+            </ul>
+          </div>
+        </li> --> 
+        <li><a href="https://onoe.gov.in/onoe-elibrary">ई-पुस्तकालय   </a></li>
+        <li><a href="https://onoe.gov.in/onoe-contact">संपर्क  </a></li>
+		<li><a href="https://onoe.gov.in/onoe-feedback">प्रतिक्रिया </a></li>
+		<li class="blink_me"><a href="https://onoe.gov.in/HLC-Report">एच एल सी - रिपोर्ट </a></li>
+     </ul>
+    </nav>
+    <nav class="main-menu clearfix" id="overflow_menu">
+      <ul class="nav-menu clearfix">
+      </ul>
+    </nav>
+  </div>
+</div>
+<script>
+function changelang(e){
+	var dataa={};
+	dataa['lagtype']=e;
+	$.ajax({
+        type: "POST",
+        url: base_url+'lang',
+        data: dataa,
+        cache: false,
+        success: function (resp) {
+		     setTimeout(function(){
+                window.location.href = base_url;
+             }, 250);
+        },
+	}); 
+}
+</script>
+
+<style>
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+</style>
+</header><section id="fontSize" class="wrapper body-wrapper ">
+  <div class="bg-wrapper top-bg-wrapper gray-bg padding-top-bott">
+    <div class="bg-wrapper top-bg-wrapper gray-bg padding-top-bott resp-tabs-container2 resp-tabs-container">
+      <div class="container">
+        <h3 class="page-heading">HLC Report </h3>
+        <div class="album py-5 bg-light">
+          <div class="container">
+                          <div class="row important-link">
+                <a target="_blank" href="https://onoe.gov.in/HLC-Report-en"><i class="fa fa-arrow-right"></i>HLC-Report (English)</a>
+                <a target="_blank" href="https://onoe.gov.in/HLC-Report-hi"><i class="fa fa-arrow-right"></i>HLC-Report (Hindi)</a>
+                <a target="_blank" href="https://onoe.gov.in/HLC-Report-annexure"><i class="fa fa-arrow-right"></i>Annexures</a>
+              </div>
+                      </div>
+        </div>
+      </div>
+
+
+      <div class="container">
+        <h3 class="page-heading">Flyer </h3>
+        <div class="album py-5 bg-light">
+          <div class="container">
+                          <div class="col-md-4">
+              <div class="links"><a  style="padding: 36px;" target="_blank" href="https://onoe.gov.in/report-web/(Hindi) Flyer.pdf"><b>Flyer (Hindi)</b></a></div>
+            </div>
+                      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .bg-light {
+    background-color: #f8f9fa !important;
+  }
+  padding-bottom: 3rem !important;
+</style>
+<!--/.carousel-wrapper-->
+<footer class="wrapper footer-wrapper">
+    
+  <div class="footer-bottom-wrapper">
+    <div class="container footer-bottom-container">
+     <div class="col-md-3">
+      <p style="text-align:center; padding-top:20px; line-height:2;">
+      	<a style="font-size:22px; font-weight:600;text-decoration: none;" href="#">महत्वपूर्ण लिंक </a><br/>
+        <a target="_blank" rel="noopener noreferrer" href="https://legalaffairs.gov.in/"> विधि कार्य विभाग</a><br/>
+        <a target="_blank" rel="noopener noreferrer" href="https://legislative.gov.in/">विधायी विभाग</a><br/>
+        <a target="_blank" rel="noopener noreferrer" href="https://lawcommissionofindia.nic.in/">भारत का विधि आयोग  </a><br/>
+        <a target="_blank" rel="noopener noreferrer" href="https://eci.gov.in/">भारत चुनाव आयोग  </a><br/>
+       <a target="_blank" rel="noopener noreferrer" href="https://www.indiacode.nic.in/"> भारत कोड   </a>
+      </p>
+      </div>
+      <div class="footer-content col-md-6">
+        <div class="copyright-content"> 
+            Website Content Managed by <br/><strong>एक देश एक चुनाव   
+            &nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" title="GoI, External Link that opens in a new window" href="https://www.india.gov.in/"><strong>
+             भारत सरकार,  </strong></a></strong> 
+            <span>द्वारा डिज़ाइन, विकसित और होस्ट किया गया है  
+            <a target="_blank" rel="noopener noreferrer" title="NIC, External Link that opens in a new window" href="https://www.nic.in/"><strong>
+              - राष्ट्रीय सूचना विज्ञान केंद्र, </strong></a><strong> (NIC)</strong></span>
+            <span class="last-updated">Last Updated: <span id="lastupdated"></span></span>
+            <span class="last-updated">Total Visitors: <span id="lastupdated">238170</span></span>
+        </div>
+      </div>
+      <div class="col-md-3">
+      <p style="text-align:center; padding-top:20px; line-height:2;">
+      <a style="font-size:22px; font-weight:600;text-decoration: none;" href="#">
+       संपर्क    </a></p>
+      <a style="text-align:center; display:block; margin:2px 0" href="mailto: se-hlc@gov.in">se-hlc[at]gov[dot]in</a>
+	  <a style="text-align:center; display:block; margin:2px 0" href="mailto: sc-hlc@gov.in">sc-hlc[at]gov[dot]in</a>
+       <p style="text-align:center;">011-23384841</p>
+        <a style="text-align:center; display:block; margin:2px 0" href="https://onoe.gov.in/onoe-feedback">
+        
+        प्रतिक्रिया        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!--/.footer-wrapper-->
+<!-- jQuery v1.11.1 -->
+<script src="https://onoe.gov.in/jsc/jquery.min.js" integrity="sha512-nhY06wKras39lb9lRO76J4397CH1XpRSLfLJSftTeo3+q2vP7PaebILH9TqH+GRpnOhfAGjuYMVmVTOZJ+682w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- jQuery Migration v1.4.1 -->
+<script src="https://onoe.gov.in/jsc/jquery-migrate-1.4.1.min.js"></script>
+<!-- jQuery v3.6.0 -->
+<script src="https://onoe.gov.in/jsc/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- jQuery Migration v3.4.0 -->
+<script src="https://onoe.gov.in/jsc/jquery-migrate-3.4.0.min.js"></script>
+<script src="https://onoe.gov.in/assets/js/jquery-accessibleMegaMenu.js"></script>
+<script src="https://onoe.gov.in/assets/js/framework.js"></script>
+<script src="https://onoe.gov.in/assets/js/jquery.flexslider.js"></script>
+<script src="https://onoe.gov.in/assets/js/font-size.js"></script>
+<script src="https://onoe.gov.in/assets/js/swithcer.js"></script>
+<script src="https://onoe.gov.in/theme/js/ma5gallery.js"></script>
+<script src="https://onoe.gov.in/assets/js/megamenu.js"></script>
+<script src="https://onoe.gov.in/theme/js/easyResponsiveTabs.js"></script>
+<script>
+$(window).ready(function(){
+// Slider						
+ $('#flexSlider').flexslider({
+        animation: "slide",
+		pausePlay: true,
+		controlNav: true,
+        start: function(slider){
+        $('body').removeClass('loading');
+        }
+ });
+  $('#flexSlider1').flexslider({
+        animation: "slide",
+		controlNav: false,
+        start: function(slider){
+        $('body').removeClass('loading');
+        }
+ });
+    $('#flexSlider2').flexslider({
+        animation: "slide",
+		controlNav: false,
+        start: function(slider){
+        $('body').removeClass('loading');
+        }
+ });
+ 
+ 
+  $('#contSlider1').flexslider({
+        animation: "swing",
+		controlNav: false,
+		directionNav: false,
+		direction: "vertical",
+		easing:'linear',
+		prevText: " ",
+		nextText: " ", 
+		minItems: 2,
+        maxItems: 2,
+		move: 2,
+		itemMargin: 0,
+		pausePlay: true,
+		pauseOnHover: true,
+		slideshowSpeed:1000,
+    	animationSpeed:10000,
+		
+        
+ });
+  
+    $('#contSlider2').flexslider({
+        animation: "slide",
+		controlNav: false,
+        start: function(slider){
+        $('body').removeClass('loading');
+        }
+ });
+ 
+ 
+ 
+// Carousel						
+ $('#flexCarousel').flexslider({
+        animation: "slide",
+        animationLoop: false,
+        itemWidth: 200,
+        itemMargin: 5,
+        minItems: 2,
+        maxItems: 6,
+		slideshow: 1,
+		move: 1,
+		pausePlay: true,
+    	pauseText: 'Pause',
+    	playText: 'Play', 
+		controlNav: false,
+        start: function(slider){
+          $('body').removeClass('loading');
+		  if (slider.pagingCount === 1) slider.addClass('flex-centered');
+        }
+      });
+ 
+  $('#flexCarousel1').flexslider({
+        animation: "slide",
+        animationLoop: false,
+        itemWidth: 168,
+        itemMargin: 20,
+        minItems:1,
+        maxItems: 4,
+		slideshow: 1,
+		move: 1,
+		controlNav: false,
+        start: function(slider){
+          $('body').removeClass('loading');
+		  //if (slider.pagingCount === 1) slider.addClass('flex-centered');
+        }
+      });
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      // Carousel						
+ $('#flexCarousel1').flexslider({
+        animation: "slide",
+        animationLoop: false,
+        itemWidth: 200,
+        itemMargin: 5,
+        minItems: 2,
+        maxItems: 6,
+		slideshow: 1,
+		move: 1,
+		pausePlay: true,
+    	pauseText: 'Pause',
+    	playText: 'Play', 
+		controlNav: false,
+        start: function(slider){
+          $('body').removeClass('loading');
+		  if (slider.pagingCount === 1) slider.addClass('flex-centered');
+        }
+      });
+ 
+  $('#flexCarousel11').flexslider({
+        animation: "slide",
+        animationLoop: false,
+        itemWidth: 168,
+        itemMargin: 20,
+        minItems:1,
+        maxItems: 4,
+		slideshow: 1,
+		move: 1,
+		controlNav: false,
+        start: function(slider){
+          $('body').removeClass('loading');
+		  //if (slider.pagingCount === 1) slider.addClass('flex-centered');
+        }
+      });
+      
+      
+      
+ // breaking_news
+
+  $('#breaking_news').flexslider({
+    animation: "slide",
+  controlNav: false,
+  animationLoop: true,
+  directionNav: false,
+  direction: "horizontal",
+  slideshowSpeed: 7000,
+   animationSpeed: 600,
+        initDelay: 1000,
+     pausePlay: true,
+    pauseText: '',
+    playText: '',
+  pauseOnHover: false
+  });
+
+ // Gallery
+      $('#galleryCarousel').flexslider({
+        animation: "fade",
+        controlNav: "thumbnails",
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+  });
+</script>
+<script>
+$(document).ready(function(){
+    $('figure img').ma5gallery({
+        preload:true
+    });
+	
+	$('#socialTab').easyResponsiveTabs({
+            type: 'default', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true, // 100% fit in a container
+            tabidentify: 'socialTab_1', // The tab groups identifier
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#nested-tabInfo');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+	
+	$('#feedTab').easyResponsiveTabs({
+            type: 'default', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true, // 100% fit in a container
+            tabidentify: 'feedTab_1', // The tab groups identifier
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#nested-tabInfo');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+	
+	$('.resp-tabs-list li a').click(function(event){
+				event.preventDefault();								 
+			})
+
+});
+</script>
+<script>
+  var a = 0;
+  $(window).scroll(function() {
+
+    var oTop = $('#counter').offset().top - window.innerHeight;
+    if (a == 0 && $(window).scrollTop() > oTop) {
+      $('.count').each(function () {
+      $(this).prop('Counter',0).animate({
+          Counter: $(this).text()
+      }, {
+          duration: 4000,
+          easing: 'swing',
+          step: function (now) {
+              $(this).text(Math.ceil(now));
+          }
+        });
+      });
+      a = 1;
+    }
+
+  });
+  
+var base_url='';
+base_url ='https://onoe.gov.in/';
+</script>
+
+<script>
+   var d = new Date();
+   var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+   document.getElementById("lastupdated").innerHTML = months[d.getMonth()]+" "+ d.getDate()+", "+d.getFullYear();
+</script>
+</body>
+</html>

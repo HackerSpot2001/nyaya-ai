@@ -101,3 +101,7 @@ def download_pdf(item: dict):
 
 def fetch_time():
     return int(time())
+
+
+def normalize_text(text:str, rep=""):
+    return text.replace(r"\s+", rep).strip()

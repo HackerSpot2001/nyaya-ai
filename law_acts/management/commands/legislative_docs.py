@@ -270,6 +270,7 @@ class Command(BaseCommand):
             )
 
     def download_pdfs(self):
+        self.stdout.write(self.style.SUCCESS("Downloading PDFs..."))
         qs = Document.objects.filter(document_urls__isnull=False)
         pdf_urls = []
         for doc in qs:
@@ -281,21 +282,21 @@ class Command(BaseCommand):
                 }
             )
 
+        total = len(pdf_urls)
+        self.stdout.write(self.style.SUCCESS(f"Total PDFs to download: {total}"))
         count = 0
-        total = 0
-        with ThreadPoolExecutor(max_workers=20) as executor:
-            for pdf_obj in pdf_urls:
-                urls = pdf_obj.get("urls")
-                save_dir = pdf_obj.get("save_dir")
-                filename = pdf_obj.get("filename")
-                count += 1
-                total += len(urls)
-                for url in urls:
-                    item = {
-                        "pdf_url": url,
-                        "save_dir": save_dir,
-                        "filename": filename,
-                        "formatter": f"PDF-DOWNLOADER-{count}/{total}",
-                        "updated_headers": self.updated_headers,
-                    }
-                    executor.submit(download_pdf, item)
+        for pdf_obj in pdf_urls:
+            urls = pdf_obj.get("urls")
+            save_dir = pdf_obj.get("save_dir")
+            filename = pdf_obj.get("filename")
+            count += 1
+            self.stdout.write(self.style.SUCCESS(f"Downloading PDF {count}/{total}"))
+            for url in urls:
+                item = {
+                    "pdf_url": url,
+                    "save_dir": save_dir,
+                    "filename": filename,
+                    "formatter": f"PDF-DOWNLOADER-{count}/{total}",
+                    "updated_headers": self.updated_headers,
+                }
+                download_pdf(item)

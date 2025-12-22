@@ -11,11 +11,11 @@ from time import time
 logger = getLogger(__name__)
 
 headers = {
-    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    # 'Connection': 'keep-alive',
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+    "Accept": "application/pdf,application/octet-stream;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Connection": "keep-alive",
     "Upgrade-Insecure-Requests": "1",
-    "Priority": "u=0, i",
     "Pragma": "no-cache",
 }
 
@@ -72,13 +72,14 @@ def download_pdf(item: dict):
     save_dir = item.get("save_dir")
     filename = item.get("filename")
     formatter = item.get("formatter", "PDF-DOWNLOADER")
+    updated_headers = item.get("updated_headers", headers)
     os.makedirs(save_dir, exist_ok=True)
 
     filename = f"{sanitize_and_shorten(filename)}.pdf"
     save_path = os.path.join(save_dir, filename)
 
     # # Download file
-    response = getReq(pdf_url, stream=True, headers=headers, allow_redirects=True)
+    response = getReq(pdf_url, stream=True, headers=updated_headers, allow_redirects=True)
     if response.status_code != 200:
         logger.error(
             f"[{formatter}] Failed to download PDF from {pdf_url}, status code: {response.status_code}"

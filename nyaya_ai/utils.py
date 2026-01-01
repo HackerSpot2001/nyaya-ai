@@ -6,7 +6,7 @@ from logging import getLogger
 from indic_transliteration import sanscript
 from indic_transliteration.sanscript import transliterate
 from time import time
-
+from pandas import date_range as get_date_range, to_datetime
 
 logger = getLogger(__name__)
 
@@ -71,27 +71,29 @@ def download_pdf(item: dict):
     pdf_url = item.get("pdf_url")
     save_dir = item.get("save_dir")
     filename = item.get("filename")
+    ext = item.get("ext","pdf")
     formatter = item.get("formatter", "PDF-DOWNLOADER")
     updated_headers = item.get("updated_headers", headers)
     os.makedirs(save_dir, exist_ok=True)
 
-    filename = f"{sanitize_and_shorten(filename)}.pdf"
+    filename = f"{sanitize_and_shorten(filename)}.{ext}"
     save_path = os.path.join(save_dir, filename)
 
-    # # Download file
+    # Download file
+    print(f"[{formatter}] Downloading PDF from {pdf_url} to {save_path}")
     response = getReq(pdf_url, stream=True, headers=updated_headers, allow_redirects=True)
     if response.status_code != 200:
-        logger.error(
+        print(
             f"[{formatter}] Failed to download PDF from {pdf_url}, status code: {response.status_code}"
         )
         return None
 
     content_length = int(response.headers.get("Content-Length", 0))
     if os.path.exists(save_path) and os.path.getsize(save_path) == content_length:
-        logger.info(f"[{formatter}] PDF already exists at {save_path}, size: {content_length}")
+        print(f"[{formatter}] PDF already exists at {save_path}, size: {content_length}")
         return save_path
 
-    logger.info(f"[{formatter}] Downloading PDF from {pdf_url} to {save_path}, size: {content_length}")
+    print(f"[{formatter}] Downloading PDF from {pdf_url} to {save_path}, size: {content_length}")
     with open(save_path, "wb") as f:
         for chunk in response.iter_content(chunk_size=8192):
             if chunk:
@@ -105,3 +107,10 @@ def fetch_time():
 
 def normalize_text(text:str, rep=""):
     return text.replace(r"\s+", rep).strip()
+
+
+def generate_dates(start_date="1997-11-05", end_date="today"):
+    start_date  = to_datetime(start_date)
+    end_date    = to_datetime(end_date)
+    date_range  = get_date_range(start=start_date, end=end_date, freq='D')
+    return date_range

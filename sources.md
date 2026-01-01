@@ -100,15 +100,15 @@ Here’s the **FULL LIST OF DATA SOURCES** for law texts.
 **[https://www.indiacode.nic.in](https://www.indiacode.nic.in)**
 Contains:
 
-* All Central Acts
-* All State Acts
-* Subordinate legislation:
+✅ * All Central Acts
+✅ * All State Acts 
+✅ * Subordinate legislation:
+  ✅ * Rules
+  ✅ * Notifications
+  ✅ * Orders
+  ✅ * Regulations
 
-  * Rules
-  * Notifications
-  * Orders
-  * Regulations
-* Download in PDF/HTML
+✅ * Download in PDF/HTML
 
 You can create a scraper using:
 
@@ -119,16 +119,16 @@ You can create a scraper using:
 
 **[https://legislative.gov.in](https://legislative.gov.in)**
 
-* Constitution
-* Amendments
-* Act history
-* Gazette notifications
+✅ * Constitution
+✅ * Amendments
+✅ * Act history
+✅ * Gazette notifications
 
 #### **3. Ministry of Law & Justice**
 
-* Official Acts
-* Bill PDFs
-* Amendments
+✅ * Official Acts
+✅ * Bill PDFs
+✅ * Amendments
 
 #### **4. eGazette**
 
@@ -137,23 +137,18 @@ You can create a scraper using:
 * All government notifications
 * Good for “latest law updates”
 
+#### **5. Government Sites**
+
+**[https://igod.gov.in](https://igod.gov.in)**
+
+* All government departments
+* Good for “latest law updates”
+
 ---
 
 ### **B. Private Law Repositories (Easy Scraping)**
 
-#### **1. VakilNo1**
-
-* Bare acts
-* Simple HTML structure
-* Perfect to scrape for LLM embedding
-
-#### **2. BareActsLive**
-
-* State-wise bare acts
-* Sections indexed
-* Fast to parse
-
-#### **3. LawMint / LegalCrystal**
+#### **1. LawMint / LegalCrystal**
 
 * Judgments + Acts
 * Good for structured metadata
@@ -170,78 +165,78 @@ Here is a **complete category-wise breakdown**.
 
 ## **A. Criminal Law**
 
-* Indian Penal Code (IPC), 1860
-* Code of Criminal Procedure (CrPC), 1973
-* Evidence Act, 1872
-* NDPS Act
-* POCSO Act
-* SC/ST Atrocities Act
-* Arms Act
-* Juvenile Justice Act
+✅ * Indian Penal Code (IPC), 1860
+✅ * Code of Criminal Procedure (CrPC), 1973
+✅ * Evidence Act, 1872
+✅ * NDPS Act
+✅ * POCSO Act
+✅ * SC/ST Atrocities Act
+✅ * Arms Act
+✅ * Juvenile Justice Act
 
 ---
 
 ## **B. Civil Law**
 
-* CPC, 1908
-* Contract Act, 1872
-* Specific Relief Act
-* Transfer of Property Act
-* Limitation Act
-* Arbitration & Conciliation Act
-* Consumer Protection Act
+✅ * CPC, 1908
+✅ * Contract Act, 1872
+✅ * Specific Relief Act
+✅ * Transfer of Property Act
+✅ * Limitation Act
+✅ * Arbitration & Conciliation Act
+✅ * Consumer Protection Act
 
 ---
 
 ## **C. Corporate & Business Law**
 
-* Companies Act
-* LLP Act
-* GST Act
-* Income Tax Act
-* SEBI Act
-* FEMA
-* Insolvency & Bankruptcy Code (IBC)
-* Competition Act
+✅ * Companies Act
+✅ * LLP Act
+✅ * GST Act
+✅ * Income Tax Act
+✅ * SEBI Act
+✅ * FEMA
+✅ * Insolvency & Bankruptcy Code (IBC)
+✅ * Competition Act
 
 ---
 
 ## **D. Banking & Finance**
 
-* RBI Act
-* Banking Regulation Act
-* SARFAESI Act
-* Negotiable Instruments Act (Cheque Bounce)
+✅ * RBI Act
+✅ * Banking Regulation Act
+✅ * SARFAESI Act
+✅ * Negotiable Instruments Act (Cheque Bounce)
 
 ---
 
 ## **E. Family & Personal Laws**
 
-* Hindu Marriage Act
-* Muslim Personal Law
-* Special Marriage Act
-* Hindu Succession Act
-* Guardianship Act
-* Domestic Violence Act
+✅ * Hindu Marriage Act
+✅ * Muslim Personal Law
+✅ * Special Marriage Act
+✅ * Hindu Succession Act
+✅ * Guardianship Act
+✅ * Domestic Violence Act
 
 ---
 
 ## **F. Labour & Employment**
 
-* Industrial Disputes Act
-* Minimum Wages Act
-* Factories Act
-* Occupational Safety Code
-* Employee Provident Fund Act
-* Payment of Wages Act
-* Maternity Benefit Act
+✅ * Industrial Disputes Act
+✅ * Minimum Wages Act
+✅ * Factories Act
+✅ * Occupational Safety Code
+✅ * Employee Provident Fund Act
+✅ * Payment of Wages Act
+✅ * Maternity Benefit Act
 
 ---
 
 ## **G. Cyber & Technology Law**
 
-* IT Act, 2000
-* Digital Personal Data Protection Act (DPDP Act), 2023
+✅ * IT Act, 2000
+✅ * Digital Personal Data Protection Act (DPDP Act), 2023
 * IT Rules
 * CERT-In guidelines
 
@@ -249,60 +244,58 @@ Here is a **complete category-wise breakdown**.
 
 ## **H. Media, Press, and Digital Content**
 
-* Cable TV Regulation Act
+✅ * Cable TV Regulation Act
+✅ * Cinematograph Act
 * OTT Guidelines 2021
-* Cinematograph Act
 
 ---
 
 ## **I. Property & Real Estate**
 
-* RERA Act
-* Registration Act
-* Stamp Act
-* Land Acquisition Act
-* Benami Property Act
+✅ * RERA Act
+✅ * Registration Act
+✅ * Stamp Act
+✅ * Land Acquisition Act
+✅ * Benami Property Act
 
 ---
 
 ## **J. Transportation**
 
-* Motor Vehicles Act
-* Railway Act
-* Aviation Act
+✅ * Motor Vehicles Act
+✅ * Railway Act
+✅ * Aviation Act
 
 ---
 
 ## **K. Environment & Health**
 
-* Environment Protection Act
-* Forest Act
-* Wildlife Protection Act
-* Biodiversity Act
-* Food Safety and Standards Act (FSSAI)
+✅ * Environment Protection Act
+✅ * Forest Act
+✅ * Wildlife Protection Act
+✅ * Biodiversity Act
+✅ * Food Safety and Standards Act (FSSAI)
 
 ---
 
 ## **L. Education**
 
-* RTE Act
-* UGC Act
-* AICTE Act
+✅ * RTE Act
+✅ * UGC Act
+✅ * AICTE Act
 
 ---
 
 ## **M. Miscellaneous**
 
-* Passport Act
-* Foreigners Act
-* Disaster Management Act
-* RTI Act
+✅ * Passport Act
+✅ * Foreigners Act
+✅ * Disaster Management Act
+✅ * RTI Act
 
 ---
 
----
-
-# ✅ **4. How LegalFinderAI Can Use This Data**
+# **4. How LegalFinderAI Can Use This Data**
 
 Here’s the optimal structure:
 
@@ -330,27 +323,10 @@ Tables:
 
 ---
 
----
-
-# ✅ Want?
-
-I can also generate:
-
 ### ✔ Full **BRD + System Architecture**
-
 ### ✔ Database schema (PostgreSQL/MySQL)
-
-### ✔ Crawlers for:
-
-* eCourts
-* IndiaCode
-* BareActsLive
-* IndianKanoon
-
 ### ✔ LLM prompts for “event → IPC/CrPC/Acts/Case Laws”
 
-### ✔ Complete API design for LegalFinderAI
 
-Just tell me:
-**"Create full architecture + DB + crawlers"** or
-**"Create all legal categories with Acts & Sections in JSON format"**
+### https://articles.manupatra.com/
+### https://sansad.in/api_ls/member?page=1&size=10&locale=en

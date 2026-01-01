@@ -2,13 +2,15 @@ from django.core.management.base import BaseCommand
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from requests import get as getReq
 from bs4 import BeautifulSoup
+from law_acts.models import Act
 from nyaya_ai.utils import (
     headers,
     convert_to_english,
     download_pdf,
     normalize_text,
+    sanitize_and_shorten
 )
-
+from django.utils import timezone
 
 class Command(BaseCommand):
     help = "Fetches acts and downloads PDFs"
@@ -18,13 +20,31 @@ class Command(BaseCommand):
     updated_headers.update({
         "Referer": "https://www.indiacode.nic.in/", 
     })
+    save_dir_obj = {
+        'Central': 'resources/pdfs/central_acts/',
+        'Repealed': 'resources/pdfs/repealed_acts/',
+        'Spent': 'resources/pdfs/spent_acts/',
+    }
 
     def handle(self, *args, **options):
         self.fetch_central_acts()
         self.fetch_repealed_acts()
         self.fetch_spent_acts()
         self.stdout.write(f"Acts data fetched, total acts: {len(self.total_acts)}...")
+        self.save_acts_to_db()
         self.download_pdfs_multithread()
+
+    def save_acts_to_db(self):
+        self.stdout.write(self.style.SUCCESS(f"Saving acts to db..."))
+        for act in self.total_acts:
+            title = sanitize_and_shorten(act['metadata']['title'])
+            if not Act.objects.filter(title=title).exists():
+                Act.objects.create(
+                    title=title,
+                    metadata=act['metadata'],
+                    pdf_urls=act['pdf_urls'],
+                )
+        self.stdout.write(self.style.SUCCESS(f"Acts saved to db..."))
 
     def fetch_central_acts(self, count=1000):
         cental_act_url = (
@@ -65,7 +85,6 @@ class Command(BaseCommand):
 
             act_name = tds[2].get_text(strip=True)
             filename = convert_to_english(act_name)
-            self.stdout.write(self.style.SUCCESS(f"Fetched PDF-URLs : {downloadable_urls}"))
             self.total_acts.append(
                 {
                     "metadata": {
@@ -73,11 +92,14 @@ class Command(BaseCommand):
                         "Act Number": tds[1].get_text(strip=True),
                         "Short Title": act_name,
                         "View": pdf_url,
+                        "ActFrom" : "Central",
+                        "title" : act_name,  
                     },
                     "pdf_urls": downloadable_urls,
                     "save_dir": "resources/pdfs/central_acts/",
                 }
             )
+            self.stdout.write(self.style.SUCCESS(f"Successfully fetched {act_name}"))
 
         self.stdout.write(
             f"Central-Acts data fetched, total acts: {len(rows)}..."
@@ -101,6 +123,8 @@ class Command(BaseCommand):
                     "Sno": tds[0].get_text(strip=True),
                     "Act Name": act_name,
                     "Year": tds[2].get_text(strip=True),
+                    "ActFrom" : "Repealed",
+                    "title" : act_name,
                 },
                 "pdf_urls" : [
                     {
@@ -111,7 +135,7 @@ class Command(BaseCommand):
                 "save_dir": "resources/pdfs/repealed_acts/",
             }
             self.total_acts.append(obj)
-            self.stdout.write(self.style.SUCCESS(f"Fetched PDF-URLs : {obj['pdf_urls']}"))
+            self.stdout.write(self.style.SUCCESS(f"Successfully fetched Repealed-Acts data"))
 
         self.stdout.write(
             f"Repealed-Acts data fetched, total acts: {len(rows)}..."
@@ -134,6 +158,8 @@ class Command(BaseCommand):
                     "Sno": tds[0].get_text(strip=True),
                     "Act Name": act_name,
                     "Year": tds[2].get_text(strip=True),
+                    "ActFrom" : "Spent",
+                    "title" : act_name,
                 },
                 "pdf_urls" : [
                     {
@@ -144,20 +170,44 @@ class Command(BaseCommand):
                 "save_dir": "resources/pdfs/spent_acts/",
             }
             self.total_acts.append(obj)
-            self.stdout.write(self.style.SUCCESS(f"Fetched PDF-URLs : {obj['pdf_urls']}"))
+            self.stdout.write(self.style.SUCCESS(f"Successfully fetched Spent-Acts data"))
 
         self.stdout.write(
             f"Spent-Acts data fetched, total acts: {len(rows)}..."
         )
 
+    def download_act_pdf(self, data : dict):
+        for pdf in data['pdf_urls']:
+            data = {
+                "pdf_url": normalize_text(pdf['pdf_url']),
+                "filename": normalize_text(pdf['filename']),
+                "updated_headers": self.updated_headers,
+                "save_dir": self.save_dir_obj.get((data['metadata'].get('ActFrom')),'resources/pdfs/central_acts/'),
+            }
+            self.stdout.write(self.style.SUCCESS(f"Downloaded PDF \t {data['pdf_url']}"))
+            download_pdf(data)
+        
+        Act.objects.filter(id=data['id']).update(is_pdf_fetched=True, pdf_fetched_at=timezone.now())
+
+
     def download_pdfs_multithread(self):
-        for act in self.total_acts:
-            for pdf in act['pdf_urls']:
-                data = {
-                    "pdf_url": normalize_text(pdf['pdf_url']),
-                    "filename": normalize_text(pdf['filename']),
-                    "updated_headers": self.updated_headers,
-                    "save_dir": normalize_text(act['save_dir']),
+        fields= [
+            'id',
+            'title', 
+            'metadata', 
+            'pdf_urls',
+        ]
+        acts_qs = Act.objects.filter(is_pdf_fetched=False).values_list(*fields)
+        with ThreadPoolExecutor(max_workers=10) as executor:
+            futures = []
+            for  id, title, metadata, pdf_urls in acts_qs.all():
+                args = {
+                    'id' : id,
+                    'title' : title,
+                    'metadata' : metadata,
+                    'pdf_urls' : pdf_urls,
                 }
-                self.stdout.write(self.style.SUCCESS(f"Downloaded PDF \t {data['pdf_url']}"))
-                download_pdf(data)
+                futures.append(executor.submit(self.download_act_pdf, args))
+
+            for future in as_completed(futures):
+                pass

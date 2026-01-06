@@ -80,7 +80,7 @@ class Command(BaseCommand):
             "k-t-sankaran",
             "r-basant",
         ]
-        author_len = author_ids.__len__()
+
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
             for date in date_range.to_list():
                 date_str = date.strftime("%d-%m-%Y")

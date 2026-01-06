@@ -7,6 +7,7 @@ from indic_transliteration import sanscript
 from indic_transliteration.sanscript import transliterate
 from time import time
 from pandas import date_range as get_date_range, to_datetime
+import traceback
 
 logger = getLogger(__name__)
 
@@ -114,3 +115,18 @@ def generate_dates(start_date="1997-11-05", end_date="today"):
     end_date    = to_datetime(end_date)
     date_range  = get_date_range(start=start_date, end=end_date, freq='D')
     return date_range
+
+
+def get_traceback(exception):
+    """Return detailed traceback with filename and line number."""
+    tb = exception.__traceback__
+    # Format the traceback details
+    formatted_tb = traceback.format_exception(None, exception, tb)
+    
+    # Extract relevant info (filename, line number, and the error message)
+    trace_info = []
+    for line in formatted_tb:
+        # You can customize this if you only want to capture specific parts.
+        trace_info.append(line.strip())
+
+    return "\n".join(trace_info)

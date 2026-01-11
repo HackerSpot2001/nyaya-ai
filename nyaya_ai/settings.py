@@ -49,7 +49,7 @@ WSGI_APPLICATION = 'nyaya_ai.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'nyaya_ai_db',
+        'NAME': 'vidhi_ai_db',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',

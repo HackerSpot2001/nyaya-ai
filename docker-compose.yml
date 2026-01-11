@@ -1,7 +1,7 @@
 services:
-  nyaya_postgres_db:
-    image: postgres:16.10-alpine3.21
-    container_name: nyaya_postgres_db
+  psql_db:
+    image: pgvector/pgvector:pg16
+    container_name: psql_db
     volumes:
       - /opt/postgres_data:/var/lib/postgresql/data
 

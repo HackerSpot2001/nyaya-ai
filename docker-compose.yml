@@ -6,7 +6,7 @@ services:
       - /opt/postgres_data:/var/lib/postgresql/data
 
     environment:
-      - POSTGRES_DB=${DB_NAME:-nyaya_ai_db}
+      - POSTGRES_DB=${DB_NAME:-vidhi_ai_db}
       - POSTGRES_USER=${DB_USER:-postgres}
       - POSTGRES_PASSWORD=${DB_PASS:-postgres}
       - TZ=${TZ:-UTC}
